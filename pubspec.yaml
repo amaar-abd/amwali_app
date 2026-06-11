@@ -16,6 +16,8 @@ dependencies:
   flutter_launcher_icons: ^0.14.4
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.3.0
+  font_awesome_flutter: ^11.0.0
   google_fonts: ^8.1.0
   intl: ^0.20.2
 
@@ -30,6 +32,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/svg/
   #   - images/a_dot_ham.jpeg
   # fonts:
   #   - family: Schyler
@@ -51,7 +54,6 @@ flutter_assets:
   filename: app_images.dart
 flutter_intl:
   enabled: true
-
 
 flutter_launcher_icons:
   android: "launcher_icon"

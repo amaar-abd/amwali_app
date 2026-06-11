@@ -1,4 +1,5 @@
 import 'package:amwali/core/routing/app_routes.dart';
+import 'package:amwali/features/main_layout/presentation/views/main_layout_view.dart';
 import 'package:amwali/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:amwali/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const SplashView());
       case AppRoutes.onBoardingView:
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
+        
+      case AppRoutes.mainView:
+        return MaterialPageRoute(builder: (context) => const MainLayoutView());
         
       default:
         return MaterialPageRoute(

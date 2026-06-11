@@ -22,13 +22,21 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       children: [
         SizedBox(
           width: double.infinity,
-          child: Image.asset(
-            Assets.assetsImagesBackgroundSplash2,
+          child: Opacity(
+            opacity: 0.30,
+            child: Image.asset(
+              Assets.assetsImagesBackgroundSplash1,
 
-            fit: BoxFit.cover,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-        Center(child: Image.asset(Assets.assetsImagesLogoApp)),
+        Center(
+          child: Image.asset(
+            Assets.assetsImagesLogoWithoutBackground,
+            height: 250,
+          ),
+        ),
       ],
     );
   }

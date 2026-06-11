@@ -10,6 +10,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const SplashView());
       case AppRoutes.onBoardingView:
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
+        
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

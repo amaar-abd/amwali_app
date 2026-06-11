@@ -24,7 +24,7 @@ class MainButton extends StatelessWidget {
     return Visibility(
       visible: isVisible,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: SizedBox(
           height: 54,
           width: double.infinity,

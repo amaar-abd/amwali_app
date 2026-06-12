@@ -11,11 +11,11 @@ class MainLayoutViewBody extends StatefulWidget {
 
 int _currentIndex = 0;
 final List<Widget> _views = [
- const HomeView(), 
-    const Center(child: Text('صفحة المعاملات')), 
-    const Center(child: Text('صفحة المستشار')),   
-    const Center(child: Text('الملف الشخصي')),
-  ];
+  const HomeView(),
+  const Center(child: Text('صفحة المعاملات')),
+  const Center(child: Text('صفحة المستشار')),
+  const Center(child: Text('الملف الشخصي')),
+];
 
 class _MainLayoutViewBodyState extends State<MainLayoutViewBody> {
   @override

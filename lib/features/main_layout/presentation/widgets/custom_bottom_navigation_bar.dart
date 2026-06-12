@@ -35,7 +35,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
         selectedFontSize: 14,
         unselectedFontSize: 12,
         elevation: 0,
-        selectedLabelStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(
+        selectedLabelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+          fontWeight: FontWeight.w600,
 
           inherit: true,
         ),
@@ -47,6 +48,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Padding(
               padding: EdgeInsets.only(bottom: 4, top: 4),
               child: SvgPicture.asset(
+                height: 22,
                 Assets.assetsImagesSvgHome,
                 colorFilter: ColorFilter.mode(
                   currentIndex == 0
@@ -62,7 +64,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Padding(
               padding: EdgeInsets.only(bottom: 4, top: 4),
               child: SvgPicture.asset(
-                Assets.assetsImagesSvgTransactions,
+                Assets.assetsImagesSvgTransactions, height: 22,
                 colorFilter: ColorFilter.mode(
                   currentIndex == 1
                       ? AppColors.primaryGreen
@@ -77,7 +79,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Padding(
               padding: EdgeInsets.only(bottom: 4, top: 4),
               child: SvgPicture.asset(
-                Assets.assetsImagesSvgAdvisor,
+                Assets.assetsImagesSvgAdvisor, height: 22,
                 colorFilter: ColorFilter.mode(
                   currentIndex == 2
                       ? AppColors.primaryGreen
@@ -92,7 +94,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             icon: Padding(
               padding: EdgeInsets.only(bottom: 4, top: 4),
               child: SvgPicture.asset(
-                Assets.assetsImagesSvgProfile,
+                Assets.assetsImagesSvgProfile, height: 22,
                 colorFilter: ColorFilter.mode(
                   currentIndex == 3
                       ? AppColors.primaryGreen

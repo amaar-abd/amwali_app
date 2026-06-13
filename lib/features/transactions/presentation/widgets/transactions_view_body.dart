@@ -18,21 +18,14 @@ class _TransactionsViewBodyState extends State<TransactionsViewBody> {
   void initState() {
     super.initState();
     _searchController = TextEditingController();
-    _searchController.addListener(reserSearch);
-  }
-
-  void reserSearch() {
     _searchController.addListener(() {
-      if (_searchController.text.isEmpty) {
-        // _searchController.clear();
-      }
+      setState(() {});
     });
   }
 
   @override
   void dispose() {
     _searchController.dispose();
-    _searchController.removeListener(reserSearch);
     super.dispose();
   }
 
@@ -47,12 +40,14 @@ class _TransactionsViewBodyState extends State<TransactionsViewBody> {
             SearchTextFormField(
               hintText: 'ابحث عن معاملة ...',
               controller: _searchController,
-              suffixIcon: IconButton(
-                onPressed: () {
-                  _searchController.clear();
-                },
-                icon: Icon(Icons.close, color: Colors.red),
-              ),
+              suffixIcon: _searchController.text.isNotEmpty
+                  ? IconButton(
+                      onPressed: () {
+                        _searchController.clear();
+                      },
+                      icon: const Icon(Icons.close, color: Colors.red),
+                    )
+                  : const SizedBox.shrink(),
               obscureText: false,
               prefixIcon: IconButton(
                 onPressed: () {

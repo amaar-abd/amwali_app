@@ -23,32 +23,41 @@ class SearchTextFormField extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [BoxShadow(color: Colors.grey.shade400, blurRadius: 4)],
       ),
-      child: TextFormField(
-        obscureText: obscureText ?? true,
-        controller: controller,
-        style: TextTheme.of(
-          context,
-        ).bodyLarge?.copyWith(color: AppColors.textDark),
-        validator: (value) =>
-            value == null || value.isEmpty ? 'ادخل قيمة في الحقل' : null,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          suffixIcon: suffixIcon,
-          prefixIcon: prefixIcon,
-          hintText: hintText,
-          hintStyle: TextTheme.of(context).bodySmall,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide.none,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: AppColors.primaryGreen,
+            selectionHandleColor: AppColors.primaryGreen,
+            selectionColor: AppColors.primaryGreen.withAlpha(30),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(color: AppColors.primaryGreen),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: BorderSide(color: Colors.red),
+        ),
+        child: TextFormField(
+          obscureText: obscureText ?? true,
+          controller: controller,
+          style: TextTheme.of(
+            context,
+          ).bodyMedium?.copyWith(color: AppColors.textDark),
+          validator: (value) =>
+              value == null || value.isEmpty ? 'ادخل قيمة في الحقل' : null,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            hintText: hintText,
+            hintStyle: TextTheme.of(context).bodyMedium,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: AppColors.primaryGreen),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: Colors.red),
+            ),
           ),
         ),
       ),

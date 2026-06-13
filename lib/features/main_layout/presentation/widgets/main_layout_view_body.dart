@@ -1,5 +1,6 @@
 import 'package:amwali/features/home/presentation/views/home_view.dart';
 import 'package:amwali/features/main_layout/presentation/widgets/custom_bottom_navigation_bar.dart';
+import 'package:amwali/features/transactions/presentation/views/transactions_view.dart';
 import 'package:flutter/material.dart';
 
 class MainLayoutViewBody extends StatefulWidget {
@@ -12,7 +13,7 @@ class MainLayoutViewBody extends StatefulWidget {
 int _currentIndex = 0;
 final List<Widget> _views = [
   const HomeView(),
-  const Center(child: Text('صفحة المعاملات')),
+  const TransactionsView(),
   const Center(child: Text('صفحة المستشار')),
   const Center(child: Text('الملف الشخصي')),
 ];

@@ -54,7 +54,7 @@ class FinancialStatusCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Icon(Icons.trending_up, color: Colors.green),
+                            Icon(Icons.trending_down, color: Colors.green),
                             const SizedBox(width: 8),
                             Text(
                               'الدخل الشهري',
@@ -88,7 +88,7 @@ class FinancialStatusCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Icon(Icons.trending_down_sharp, color: Colors.red),
+                            Icon(Icons.trending_up, color: Colors.red),
                             const SizedBox(width: 8),
                             Text(
                               'الصرف الشهري',

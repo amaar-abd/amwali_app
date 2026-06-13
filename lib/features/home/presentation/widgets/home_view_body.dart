@@ -18,7 +18,10 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(height: 20),
             ExpensesIncomeChart(),
             SizedBox(height: 20),
-            TransactionItemsList(),
+            TransactionItemsList(
+              title: 'المعاملات الاخيرة',
+              supTitle: 'عرض الكل',
+            ),
             SizedBox(height: 10),
           ],
         ),

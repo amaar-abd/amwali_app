@@ -3,8 +3,9 @@ import 'package:amwali/features/home/presentation/widgets/transaction_item.dart'
 import 'package:flutter/material.dart';
 
 class TransactionItemsList extends StatelessWidget {
-  const TransactionItemsList({super.key});
-
+  const TransactionItemsList({super.key,  this.title,  this.supTitle});
+  final String? title;
+  final String? supTitle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,16 +28,16 @@ class TransactionItemsList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'المعاملات الاخيرة',
+                title??'',
                 style: TextTheme.of(context).bodyMedium?.copyWith(
-                  color: AppColors.primaryGreen,
+                  color: AppColors.textDark,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
-                'عرض الكل',
+                supTitle??'',
                 style: TextTheme.of(context).bodySmall?.copyWith(
-                  color: AppColors.primaryGreen,
+                  color: AppColors.textDark,
                   fontWeight: FontWeight.w600,
                 ),
               ),

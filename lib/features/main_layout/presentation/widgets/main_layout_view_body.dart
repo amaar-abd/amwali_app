@@ -1,5 +1,7 @@
+import 'package:amwali/features/advisor/presentation/views/advisor_view.dart';
 import 'package:amwali/features/home/presentation/views/home_view.dart';
 import 'package:amwali/features/main_layout/presentation/widgets/custom_bottom_navigation_bar.dart';
+import 'package:amwali/features/profile/presentation/views/profile_viw.dart';
 import 'package:amwali/features/transactions/presentation/views/transactions_view.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +16,8 @@ int _currentIndex = 0;
 final List<Widget> _views = [
   const HomeView(),
   const TransactionsView(),
-  const Center(child: Text('صفحة المستشار')),
-  const Center(child: Text('الملف الشخصي')),
+  const AdvisorView(),
+  const ProfileViw(),
 ];
 
 class _MainLayoutViewBodyState extends State<MainLayoutViewBody> {

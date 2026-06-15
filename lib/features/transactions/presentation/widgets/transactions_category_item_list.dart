@@ -3,8 +3,8 @@ import 'package:amwali/features/transactions/presentation/widgets/transactions_c
 import 'package:flutter/material.dart';
 
 class TransactionsCategoryItemList extends StatefulWidget {
-  const TransactionsCategoryItemList({super.key});
-
+  const TransactionsCategoryItemList({super.key, required this.onCategoryChanged});
+final ValueChanged<String> onCategoryChanged;
   @override
   State<TransactionsCategoryItemList> createState() =>
       _TransactionsCategoryItemListState();
@@ -37,10 +37,12 @@ class _TransactionsCategoryItemListState
                 setState(() {
                   activeIndex = index;
                 });
+                widget.onCategoryChanged(orderbyItemsList[index].title);
               },
               isSelected: activeIndex == index,
             ),
           );
+
         },
       ),
     );

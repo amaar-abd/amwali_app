@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            isScrollControlled: true,
+            isScrollControlled: true,            
             backgroundColor: Colors.transparent,
             builder: (context) => const AddTransactionBottomSheet(),
           );

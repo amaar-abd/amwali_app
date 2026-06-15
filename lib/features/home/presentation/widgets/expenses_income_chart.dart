@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 class ExpensesIncomeChart extends StatelessWidget {
-  const ExpensesIncomeChart({super.key});
-
+  const ExpensesIncomeChart({
+    super.key,
+    required this.totalIncome,
+    required this.totalExpenses,
+  });
+  final double totalIncome;
+  final double totalExpenses;
   @override
   Widget build(BuildContext context) {
-    double totalIncome = 45200;
-    double totalExpenses = 12840;
-
     double sum = totalIncome + totalExpenses;
-    double incomePercentage = (totalIncome / sum) * 100;
-    double expensePercentage = (totalExpenses / sum) * 100;
+    double incomePercentage = sum > 0 ? (totalIncome / sum) * 100 : 0.0;
+    double expensePercentage = sum > 0 ? (totalExpenses / sum) * 100 : 0.0;
 
     Map<String, double> dataMap = {
-      "الدخل": totalIncome,
+      "الدخل": totalIncome == 0 && totalExpenses == 0 ? 1 : totalIncome,
       "المصروف": totalExpenses,
     };
 
-    List<Color> colorList = [Colors.green, Colors.red];
+    List<Color> colorList = totalIncome == 0 && totalExpenses == 0
+        ? [Colors.grey.shade300, Colors.grey.shade200]
+        : [Colors.green, Colors.red];
 
     return Container(
       decoration: BoxDecoration(
@@ -69,7 +74,7 @@ class ExpensesIncomeChart extends StatelessWidget {
                       style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                     Text(
-                      (totalIncome - totalExpenses).toStringAsFixed(0),
+                     NumberFormat('#,###').format(totalIncome - totalExpenses),
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

@@ -1,8 +1,17 @@
 import 'package:amwali/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class FinancialStatusCard extends StatelessWidget {
-  const FinancialStatusCard({super.key});
+  const FinancialStatusCard({
+    super.key,
+    required this.currentBalance,
+    required this.totalIncome,
+    required this.totalExpense,
+  });
+  final double currentBalance;
+  final double totalIncome;
+  final double totalExpense;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +43,8 @@ class FinancialStatusCard extends StatelessWidget {
             ),
             SizedBox(height: 8),
             Text(
-              '1500000',
-              style: TextTheme.of(context).displaySmall?.copyWith(
+              '${NumberFormat('#,###').format(currentBalance)} ل.س',
+              style: TextTheme.of(context).displayLarge?.copyWith(
                 color: AppColors.primaryGreen,
                 fontWeight: FontWeight.bold,
               ),
@@ -43,70 +52,72 @@ class FinancialStatusCard extends StatelessWidget {
             SizedBox(height: 20),
             Row(
               children: [
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppColors.textGray.withAlpha(20),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.trending_down, color: Colors.green),
-                            const SizedBox(width: 8),
-                            Text(
-                              'الدخل الشهري',
-                              style: TextTheme.of(
-                                context,
-                              ).bodyMedium?.copyWith(color: AppColors.textDark),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          '1000000',
-                          style: TextStyle(
-                            color: Colors.green,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                Expanded(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: AppColors.textGray.withAlpha(20),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.trending_down, color: Colors.green),
+                              const SizedBox(width: 8),
+                              Text(
+                                'الدخل الشهري',
+                                style: TextTheme.of(context).bodyMedium
+                                    ?.copyWith(color: AppColors.textDark),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                          Text(
+                            '${NumberFormat('#,###').format(totalIncome)} ل.س',
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(width: 20),
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppColors.textGray.withAlpha(20),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.trending_up, color: Colors.red),
-                            const SizedBox(width: 8),
-                            Text(
-                              'الصرف الشهري',
-                              style: TextTheme.of(
-                                context,
-                              ).bodyMedium?.copyWith(color: AppColors.textDark),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          '1000000',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                Expanded(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: AppColors.textGray.withAlpha(20),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.trending_up, color: Colors.red),
+                              const SizedBox(width: 8),
+                              Text(
+                                'الصرف الشهري',
+                                style: TextTheme.of(context).bodyMedium
+                                    ?.copyWith(color: AppColors.textDark),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                          Text(
+                            '${NumberFormat('#,###').format(totalExpense)} ل.س',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

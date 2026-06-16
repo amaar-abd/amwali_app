@@ -26,8 +26,6 @@ The app features a cutting-edge, responsive UI/UX, fast and secure offline stora
 </p>
 
 ### 📊 3. Unified Transactions Ledger Center (Filtering, Smart Search & CRUD)
-*A comprehensive, single-screen financial hub handling interactive lists, multi-tier filtering, localized intelligent search, and direct record management:*
-
 <p align="center">
   <img src="screenshots/transactions_view_initial.jpg" width="31%">
   <img src="screenshots/transactions_view.jpg" width="31%">

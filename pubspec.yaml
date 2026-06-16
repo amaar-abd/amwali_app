@@ -25,7 +25,9 @@ dependencies:
   isar_community_flutter_libs: ^3.3.2
   path_provider: ^2.1.5
   pattern_formatter: ^4.0.1
+  pdf: ^3.12.0
   pie_chart: ^5.4.0
+  printing: ^5.14.3
 
 dev_dependencies:
   build_runner: ^2.4.8

@@ -1,5 +1,4 @@
 import 'package:amwali/features/profile/presentation/widgets/reports_center_card.dart';
-import 'package:amwali/features/profile/presentation/widgets/user_profile_card.dart';
 import 'package:flutter/material.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -12,8 +11,6 @@ class ProfileViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 10),
-          UserProfileCard(),
-          SizedBox(height: 25),
           ReportsCenterCard(),
         ],
       ),

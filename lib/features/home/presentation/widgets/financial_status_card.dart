@@ -39,7 +39,7 @@ class FinancialStatusCard extends StatelessWidget {
               'إجمالي الرصيد الحالي',
               style: TextTheme.of(
                 context,
-              ).bodyMedium?.copyWith(color: AppColors.textDark, fontSize: 18),
+              ).bodyMedium?.copyWith(color: AppColors.textDark, fontSize: 18, fontWeight: FontWeight.w600,),
             ),
             SizedBox(height: 8),
             Text(

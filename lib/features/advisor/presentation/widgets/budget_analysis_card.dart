@@ -19,9 +19,8 @@ class BudgetAnalysisCard extends StatelessWidget {
               strokeWidth: 3,
             ),
           );
-
         } else if (state is FinanceDataLoaded) {
-       return   Container(
+          return Container(
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -40,28 +39,6 @@ class BudgetAnalysisCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'تحليل قاعدة',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFF1A365D),
-                          ),
-                        ),
-                        Text(
-                          '50/30/20',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(0xFF1A365D),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 10),
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
@@ -74,6 +51,29 @@ class BudgetAnalysisCard extends StatelessWidget {
                         size: 24,
                       ),
                     ),
+
+                    const SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'التوزيع الذكي للميزانية',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Color(0xFF1A365D),
+                          ),
+                        ),const SizedBox(height: 8),
+                        Text(
+                          'تحليل قاعدة 50/30/20 العالمية',
+                          style: TextTheme.of(context).bodySmall?.copyWith(
+                            color: AppColors.primaryGreen,
+                            fontSize: 14,
+                           
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
 
@@ -83,12 +83,16 @@ class BudgetAnalysisCard extends StatelessWidget {
                   title: 'الاحتياجات الضرورية (50%)',
                   subtitle: 'الإيجار، الفواتير، الغذاء الأساسي',
                   percentage: state.needsPercentage,
-                  progressValue:state.needsProgress,
-                  color: state.needsProgress > 0.50 ? const Color(0xFFB91C1C) : const Color(0xFF10B981),
-                  statusText: state.needsProgress > 0.50 
-                      ? 'تنبيه: تجاوزت الميزانية المحددة للاحتياجات.' 
+                  progressValue: state.needsProgress,
+                  color: state.needsProgress > 0.50
+                      ? const Color(0xFFB91C1C)
+                      : const Color(0xFF10B981),
+                  statusText: state.needsProgress > 0.50
+                      ? 'تنبيه: تجاوزت الميزانية المحددة للاحتياجات.'
                       : 'أداء ممتاز، أنت تحت الحد المسموح.',
-                  statusIcon: state.needsProgress > 0.50 ? Icons.warning_amber_rounded : Icons.check_circle_outline_rounded,
+                  statusIcon: state.needsProgress > 0.50
+                      ? Icons.warning_amber_rounded
+                      : Icons.check_circle_outline_rounded,
                 ),
 
                 const Padding(
@@ -103,11 +107,15 @@ class BudgetAnalysisCard extends StatelessWidget {
                   subtitle: 'السفر، التسوق، المطاعم',
                   percentage: state.wantsPercentage,
                   progressValue: state.wantsProgress,
-                  color: state.wantsProgress > 0.30 ? const Color(0xFFB91C1C) : const Color(0xFF10B981),
-                  statusText:state.wantsProgress > 0.30 
-                      ? 'تنبيه: تجاوزت الميزانية المحددة للرغبات.' 
+                  color: state.wantsProgress > 0.30
+                      ? const Color(0xFFB91C1C)
+                      : const Color(0xFF10B981),
+                  statusText: state.wantsProgress > 0.30
+                      ? 'تنبيه: تجاوزت الميزانية المحددة للرغبات.'
                       : 'أداء ممتاز، أنت تحت الحد المسموح.',
-                  statusIcon: state.wantsProgress > 0.30 ? Icons.warning_amber_rounded : Icons.check_circle_outline_rounded,
+                  statusIcon: state.wantsProgress > 0.30
+                      ? Icons.warning_amber_rounded
+                      : Icons.check_circle_outline_rounded,
                 ),
 
                 const Padding(
@@ -121,12 +129,14 @@ class BudgetAnalysisCard extends StatelessWidget {
                   title: 'الادخار والاستثمار (20%)',
                   subtitle: 'الأسهم، الصناديق، الطوارئ',
                   percentage: state.savingsPercentage,
-                  progressValue:state.savingsProgress,
+                  progressValue: state.savingsProgress,
                   color: const Color(0xFF1E40AF),
-                  statusText: state.savingsProgress >= 0.20 
-                      ? 'رائع! قمت بزيادة حصة الاستثمار هذا الشهر.' 
+                  statusText: state.savingsProgress >= 0.20
+                      ? 'رائع! قمت بزيادة حصة الاستثمار هذا الشهر.'
                       : 'حاول زيادة ادخارك للوصول لنسبة 20%.',
-                  statusIcon: state.savingsProgress >= 0.20 ? Icons.trending_up_rounded : Icons.info_outline_rounded,
+                  statusIcon: state.savingsProgress >= 0.20
+                      ? Icons.trending_up_rounded
+                      : Icons.info_outline_rounded,
                   isGradient: true,
                 ),
               ],
